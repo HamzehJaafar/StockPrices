@@ -1,0 +1,270 @@
+.left {
+	float: left;
+	text-align: center;
+	border: 1px solid #ccc;
+	background-color: #f3f3f3;
+	margin: 1em;
+	padding: 1em;
+	margin-left: 5em;
+}
+
+#news {
+	padding-top: 1em;
+}
+
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td,
+th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+
+tr:nth-child(even) {
+	background-color: #dddddd;
+}
+
+#margin {
+	margin: 20px;
+	margin-left: 20px;
+	margin-right: 25px;
+}
+
+p.date {
+	font-size: 10px;
+	position: absolute;
+	bottom: 0;
+	margin-left: 10%;
+	color: limegreen;
+}
+
+img.news {
+	border-radius: 10px;
+	border: 2px solid black;
+	display: block;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+.move {
+	margin-right: 20px;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+
+	min-height: 100%;
+	position: relative;
+	text-align: center;
+}
+
+#navBar {
+	visibility: hidden;
+}
+
+nav {
+	padding: 1em;
+	height: 3em;
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	height: auto;
+	border-bottom: 2px solid rgb(0, 0, 0);
+	z-index: 1;
+	/*Add this*/
+	background-color: white;
+}
+
+#navMain {
+	text-align: left;
+	float: left;
+	padding: 5px;
+}
+
+#loginform {
+	display: none;
+	position: absolute;
+	top: 4em;
+	right: 1em;
+	margin: 1em;
+	padding-top: 1em;
+	background-color: #dddddd;
+	z-index: 1;
+}
+
+#login {
+	display: table-cell;
+	text-align: center;
+	padding: 1em;
+	border: 1px solid #dddddd;
+}
+
+#loginform:before {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+	right: 0px;
+	top: -30px;
+	border: 15px solid;
+	border-color: transparent transparent #dddddd transparent;
+}
+
+a.tir {
+	padding: 10px;
+	display: inline;
+	text-decoration: none;
+	color: black;
+}
+
+a.nav {
+	padding: 10px;
+	display: inline;
+	text-decoration: none;
+	color: grey;
+	transition: color 1s, background-color 1s, border-radius 1s;
+	background-color: white;
+	border-radius: 10px;
+}
+
+a.nav:hover {
+	background-color: #555;
+	color: white;
+	border-radius: 10px;
+}
+
+#SearchDiv {
+	padding-left: 10px;
+	float: right;
+	text-align: left;
+	display: inline;
+}
+
+#Compare {
+	padding-left: 10px;
+	float: right;
+	text-align: right;
+	padding-right: 10px;
+	color: grey;
+	display: inline;
+}
+
+#logo {
+	padding-top: 75px;
+}
+
+nav > img {
+	width: 25px;
+	height: 25px;
+	float: right;
+	border: 1px solid #dddddd;
+	border-radius: 50%;
+}
+
+h1 {
+	padding-top: 20px;
+}
+
+main {
+	margin-top: 50px;
+	margin-left: 1em;
+	margin-right: 1em;
+	z-index: 0;
+	overflow-x: hidden;
+}
+
+#desc {
+	font-size: 13px;
+}
+
+#title {
+	transition: color 1s;
+}
+
+#title:hover {
+	color: red;
+}
+
+#user,
+#pass {
+	display: block;
+	margin: 0 auto;
+	color: #777777;
+	width: 70vw;
+	font-size: 1.5em;
+	text-align: center;
+}
+
+#login > input[type="submit"] {
+	position: relative;
+	border: 1px solid #dddddd;
+	border-radius: 0.2em;
+	background-color: #f3f3f3;
+	color: #777777;
+	width: 70vw;
+	font-size: 1.5em;
+}
+
+#login > input[type="submit"]:hover {
+	border: 1px solid black;
+	color: black;
+}
+
+#name {
+	font-size: 15px;
+	padding: 0px;
+	width: 200px;
+	border: 2px solid #ccc;
+	-webkit-border-radius: 10px;
+	border-radius: 50px;
+	outline: none;
+	text-align: center;
+	margin: auto;
+	transition: box-shadow .5s;
+}
+
+#name:focus {
+	border-color: blue;
+	outline: none;
+	box-shadow: 10px 10px 10px #888888;
+}
+
+#header {
+	font-family: 'Cabin', sans-serif;
+	float: left;
+}
+
+input[type=submit] {
+	border: 1px solid #dddddd;
+	border-radius: 0.2em;
+	background-color: #f3f3f3;
+	color: #777777;
+	width: 6vw;
+	font-size: 1em;
+	outline: none;
+	border-radius: 50px;
+}
+
+input[type=submit]:hover {
+	border: 1px solid black;
+	color: black;
+}
+
+footer {
+	position: relative;
+	width: 100vw;
+	margin-top: 5em;
+	bottom: 0;
+	padding: 1em;
+	background-color: #efefef;
+	text-align: center;
+	z-index: 999;
+}

@@ -1,0 +1,30 @@
+{
+  "name": "theinvestorsreport",
+  "version": "1.0.0",
+  "description": "Name: The Investors Report Languages: HTML, CSS, Javascript, JSON, JQuery",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rganado/cps630-assign.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rganado/cps630-assign/issues"
+  },
+  "homepage": "https://github.com/rganado/cps630-assign#readme",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "ejs": "^2.5.6",
+    "express": "^4.14.1",
+    "morgan": "^1.8.1",
+    "mysql": "^2.18.1",
+    "node-mysql": "^0.4.2",
+    "nodemon": "^1.11.0"
+  }
+}

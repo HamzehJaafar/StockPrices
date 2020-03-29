@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>The Investors Report</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/report.css">
+	<script src="js/index.js"></script>
+</head>
+
+<body>
+	<nav class="move" id="navBar"> 
+		<div id="navMain"> <a class="tir" href="/investorsreport"><strong>The Investors Report</strong></a>
+			<div id="Compare">
+				<form id="CompareWith" action="CReport.html" method="GET">
+					<input id="companyOne" type="hidden" value="" name="companyOne" />
+					<input type="text" id="name" placeholder="Company Name / Ticker" name="companyTwo">
+					<input type="submit" value="Compare"> </form>
+			</div>
+			<div id="SearchDiv">
+				<form id="SearchBar" action="report.html" method="GET">
+					<input type="text" class="search" id="name" placeholder="Try Another Search" name="company">
+					<input type="submit" value="Search"> </form>
+			</div>
+		</div>
+	</nav>
+	<main> <img width="2%" height="2%" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" class="logo" id="logo" alt="logo">
+		<h1 class="a" id="cname"></h1>
+		<div>
+			<h4 id="lastDayTitle"></h4>
+			<h4 id="perceptronTitle"></h4>
+			<table>
+				<tr>
+					<th>Open</th>
+					<th>High</th>
+					<th>Low</th>
+					<th>Close</th>
+				</tr>
+				<tr>
+					<td id="open"></td>
+					<td id="high"></td>
+					<td id="low"></td>
+					<td id="close"></td>
+				</tr>
+			</table>
+			<canvas id="lastday" width="700" height="160"></canvas>
+			<div class="col-m-6">
+				<h4 id="highlowTitle"></h4>
+				<canvas id="highlow" width="900" height="400"></canvas>
+			</div>
+			<div class="col-m-6">
+				<h4 id="volumeTitle"></h4>
+				<canvas id="volume" width="900" height="400"></canvas>
+			</div>
+			<div class="col-m-12">
+				<h4 id="adjc">Close/ Adjusted Close</h4>
+				<canvas id="adjclose" width="900" height="400"></canvas>
+			</div>
+		</div>
+	</main>
+	<div style="clear: both"></div>
+	<footer style="text-align:left">
+		<p> <a class="nav" href="index.html">Home</a> &nbsp; &nbsp;<a class="nav" href="terms.html">Terms</a>&nbsp; &nbsp;<span>Copyright ©2017 </span></p>
+	</footer>
+	
+</body>
+
+</html>

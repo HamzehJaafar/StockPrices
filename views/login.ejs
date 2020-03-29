@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="js/index.js"></script>
+</head>
+
+<body>
+	<nav> <img id="profile" src="img/profile.png">
+		<div id="loginform" style="display: none">
+			<form id="login" method="POST" action="/investorsreport/login" style="display: none">
+				<input id="user" type="text" name="username" placeholder="Username">
+				<input id="pass" type="password" name="password" placeholder="Password">
+				<input id="logbtn" type="submit" value="Login" name="login">
+				<br> <a href="signup.html">Register</a> </form>
+			<button id="signout" onclick="signout()" style="display: none">Sign Out</button>
+		</div>
+		<div id="navMain"> <a class="tir" href="/investorsreport"><strong>The Investors Report</strong></a>
+			<div id="CompareBar">
+				<form id="CompareBar" action="CReport.html" method="GET">
+					<input type="text" class="compare" id="companyOne" placeholder="Company #1" name="companyOne">
+					<input type="text" class="compare" id="companyTwo" placeholder="Company #2" name="companyTwo">
+					<input type="submit" value="Compare" id="compare1"> </form>
+			</div>
+		</div>
+	</nav>
+	<main>
+		<div id="SearchDiv">
+			<form id="SearchBar" action="JavaScript:searchResults()" method="GET">
+				<h1>The Investors Report</h1>
+				<input type="text" id="name" placeholder="Search for a company" name="company">
+				<p id="error"></p>
+				<input type="submit" value="Search"> </form>
+		</div>
+		<div id="results"></div>
+		<div class="queries">
+			<% for(var i = 0; i < div.length; i++) { %>
+				<a href='report.html?company=<%=div[i]%>'>
+					<%=div[i].toUpperCase() %>
+				</a>
+				<% } %>
+		</div>
+	</main>
+	<footer style="text-align:left">
+		<p><a class="footer" href="about.html">About</a> &nbsp; &nbsp;<span>Copyright ©2017 rganado.ca/investorsreport</span></p>
+	</footer>
+	<script>
+		var user = "<%= user %>";
+		var data = "<%= div %>";
+		console.log(user);
+		sessionStorage.setItem("username", user);
+		sessionStorage.setItem("query", data);
+		console.log(sessionStorage.getItem("query"));
+
+		function searchResults() {
+			data = document.getElementById("name").value;
+			$.getJSON("mapping.json", function (res) {
+				var companyName = []
+					, companySrc = []
+					, companyTicker = []
+					, j = 0;
+				for (i = 0; i < res.Records.length; i++) {
+					if (res.Records[i].Name.toLowerCase().includes(data.toLowerCase().split("+", 1))) {
+						companyTicker[j] = res.Records[i].Ticker;
+						companyName[j] = res.Records[i].Name;
+						companySrc[j] = "https://logo.clearbit.com/" + res.Records[i].Name.split(" ", 1) + ".com";
+						j++;
+					}
+					else if (res.Records[i].Ticker.toLowerCase().includes(data.toLowerCase())) {
+						companyTicker[j] = res.Records[i].Ticker;
+						companyName[j] = res.Records[i].Name;
+						companySrc[j] = "https://logo.clearbit.com/" + res.Records[i].Name.split(" ", 1) + ".com";
+						j++;
+					}
+				}
+				if (companyName[0] == null) {
+					document.getElementById("error").innerHTML = "No search results found in our database, try a specific company name or ticker.";
+					document.getElementById("results").innerHTML = "";
+				}
+				else {
+					document.getElementById("error").innerHTML = "";
+					var i;
+					document.getElementById("results").innerHTML = "<h3> Search Results </h3>";
+					for (i = 0; i < companyName.length; i++) {
+						document.getElementById("results").innerHTML += "<a href='report.html?company=" + companyTicker[i] + "&username=" + user + "'>" + companyName[i] + "(" + companyTicker[i] + ")</a>";
+					}
+				}
+			});
+		}
+		profile.onclick = function () {
+			var logindiv = document.getElementById("loginform");
+			var form = document.getElementById("login");
+			var button = document.getElementById("signout");
+			console.log(login.style.display);
+			if (sessionStorage.getItem('username')) {
+				if (logindiv.style.display !== 'none') {
+					console.log("Change to none");
+					logindiv.style.display = 'none';
+					document.getElementById('signout').style.display = 'none';
+				}
+				else {
+					console.log('Displayed true');
+					logindiv.style.display = 'table';
+					button.style.display = 'block';
+				}
+			}
+			else {
+				if (logindiv.style.display !== 'none') {
+					console.log("Change to none");
+					logindiv.style.display = 'none';
+					form.style.display = 'none';
+				}
+				else {
+					console.log('Displayed true');
+					logindiv.style.display = 'table';
+					form.style.display = 'block';
+				}
+			}
+		}
+
+		function signout() {
+			sessionStorage.clear();
+			window.location.replace("/investorsreport");
+		}
+	</script>
+</body>
+
+</html>

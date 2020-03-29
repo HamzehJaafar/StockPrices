@@ -1,0 +1,97 @@
+      <!DOCTYPE html>
+<html>
+
+<head>
+	<title>About</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/terms.css">
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+		/*mobile*/
+		
+		[class*="col-"] {
+			float: left;
+			padding: 15px;
+			/*width: 100%;*/
+		}
+		
+		.row::after {
+			content: "";
+			clear: both;
+			display: table;
+		}
+		
+		@media only screen and (min-width:850px) {
+			/*big screen - desktops*/
+			.col-0 {
+				width: 0%;
+			}
+			.col-1 {
+				width: 8.33%;
+			}
+			.col-2 {
+				width: 16.66%;
+			}
+			.col-3 {
+				width: 25%;
+			}
+			.col-4 {
+				width: 33.33%;
+			}
+			.col-5 {
+				width: 41.66%;
+			}
+			.col-6 {
+				width: 50%;
+			}
+			.col-7 {
+				width: 58.33%;
+			}
+			.col-8 {
+				width: 66.66%;
+			}
+			.col-9 {
+				width: 75%;
+			}
+			.col-10 {
+				width: 83.33%;
+			}
+			.col-11 {
+				width: 91.66%;
+			}
+			.col-12 {
+				width: 100%;
+				text-align: center;
+			}
+		}
+		
+		.header {
+			font-weight: bold;
+		}
+	</style>
+</head>
+
+<body>
+	<h2 style="text-align:center;">The Investors Report</h2>
+	<ul>
+		<li>Open</li>
+		<p>Opening price of the stock on the specified day.</p>
+		<li>High</li>
+		<p>A security's intraday high trading price. Today's high is the highest price at which a stock traded during the course of the day. Today's high is typically higher than the closing or opening price. More often than not this is higher than the closing price.</p>
+		<li>Low</li>
+		<p>A security's intraday low trading price. Today's low is the lowest price at which a stock traded during the course of the day. Today's low is typically lower than the higher or opening price. More often than not this is lower than the high price.</p>
+		<li>Close</li>
+		<p>Although closing prices do not reflect the after-hours price or corporate actions, they may still act as useful markers for investors to assess changes in stock prices over time — the closing price of one day can be compared to the previous closing price to measure market sentiment for a given security over a trading day. The closing price is only useful during periods when a company has not issued any cash dividends or conducted any corporate actions, such as stock splits, reverse stock splits and stock dividends. </p>
+		<li>Adj. Close</li>
+		<p>An adjusted closing price is a stock's closing price on any given day of trading that has been amended to include any distributions and corporate actions that occurred at any time prior to the next day's open. The adjusted closing price is often used when examining historical returns or performing a detailed analysis on historical returns.</p>
+		<li>Volume</li>
+		<p>By knowing the total volume on a day, you can understand the power of influence on a given stock. The greater the volume, the greater the influence for the price to change. This allows us to identify accumulation and distribution days on a stock chart which can be used to identify current momentum and predict future price movements.</p>
+	</ul>
+	<footer style="text-align:left">
+		<p> <a class="nav" href="/investorsreport">Home</a> &nbsp; &nbsp;<a class="nav" href="terms.html">Terms</a>&nbsp; &nbsp;<span>Copyright ©2017 </span></p>
+	</footer>
+</body>
+
+</html>
