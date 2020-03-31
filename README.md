@@ -1,4 +1,4 @@
-# Currently being updated
+# Stock Rreport
 
 Web application that takes a user query of atleast one company as input and returns a report through graphs and tables based on the stock data. 
 
